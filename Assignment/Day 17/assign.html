@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("---- Task 1(Assignment Operators) -----");
+        let a=1;
+        let b=2;
+        let c="1";
+
+        console.log(`The sum of a+b is ${a+b}`);
+        console.log(`The sub of a-b is ${a-b}`);
+        console.log(`The mul of a*b is ${a*b}`);
+        console.log(`The div of a/b is ${a/b}`);
+        console.log(`The mod of a%b is ${a%b}`);
+        console.log(`The double equal of a and b is ${a==c}`);
+        console.log(`The triple equal of a and b is ${a===b}`);
+
+        let age=18;salary=10000;
+        console.log(age<=18 && salary>=20000)
+        console.log(age>19 || salary>=10000);
+
+        console.log("---- Task 2(Number is positive or negative) -----");
+
+        let x=-1;
+
+        if(x>=0){
+            console.log("The number is positive");
+        }
+        else{
+            console.log("The number is negative")
+        }
+
+        //Getting the number from the user and checking it:
+        let num=prompt("Enter a number:")
+        if(num>=0){
+            console.log("The number is positive");
+        }
+        else{
+            console.log("The number is negative")
+        }
+        
+
+         console.log("---- Task 3(Switch to print days of the week) -----")
+         console.log("Method 1 :");
+
+         let week=prompt("Enter the day number to find which day its belong")
+         switch(parseInt(week)){
+            case 1:
+                console.log("Monday");
+                break;
+
+            case 2:
+                console.log("Tuesday");
+                break;
+
+            case 3:
+                console.log("Wednesday");
+                break;
+
+            case 4:
+                console.log("Thursday");
+                break;
+
+            case 5:
+                console.log("Friday");
+                break;
+
+            case 6:
+                console.log("Saturday");
+                break;
+
+            case 7:
+                console.log("Sunday");
+                break;
+         }
+ 
+
+        //Method 2:
+        console.log("Method 2 :");
+         let s=prompt("Enter a day number to find its a weekday or weekend")
+         switch(parseInt(s)){
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                console.log("Weekday");
+                break;
+            
+            case 6:
+            case 7:
+                console.log("Weekend");
+                break;
+         }
+
+
+
+    </script>
+</body>
+</html>
