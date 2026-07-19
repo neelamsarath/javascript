@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        console.log("---- factorial of a given no // 5!=5*4*3*2*1 =120 ----") 
+
+        //for loop
+
+        n = Number(prompt("Enter a number"));
+        let f = 1;
+
+        for (let i = n; i >= 1; i--) {
+            f *= i;
+        }
+        console.log(f);
+
+        //while loop
+        f = 1;
+        while (n >= 1) {
+            f *= n;
+            n--;
+        }
+        console.log(f);
+
+        //Do while
+        f = 1;
+        do {
+            f *= n;
+            n--;
+        } while (n >= 1);
+        console.log(f);  */
+
+
+        /*console.log("---- palindrome ----") 
+
+        //for loop
+        let word=prompt("Enter a word");
+        let a="";
+        for(let i=word.length-1;i>=0;i--){
+            a+=word[i];
+        }
+        if(word==a){
+            console.log("Its a palindrome")
+        }else{
+            console.log("Its not a palindrome")
+        } 
+
+        //while loop
+        a="";
+        i=word.length-1;
+        while(i>=0){
+            a+=word[i];
+            i--;
+        }
+        if(word==a){
+            console.log("Its a palindrome")
+        }else{
+            console.log("Its not a palindrome")
+        } 
+
+        //Do while
+        a="";
+        i=word.length-1;
+        do{
+            a+=word[i];
+            i--;
+        }while(i>=0)
+
+        if(word==a){
+            console.log("Its a palindrome")
+        }else{
+            console.log("Its not a palindrome")
+        }  
+
+        
+
+        console.log("---- Amstrong ----");
+
+        //while loop
+        let numb=Number(prompt("Enter the number to check if it is a amstrong or not"));
+        let temp=numb;
+        let r;
+        let sum=0;
+
+        while(temp>0){
+            r=parseInt(temp)%10;
+            sum+=r*r*r;
+            temp=parseInt(temp/10);
+        }
+        if(numb==sum){
+            console.log("Its an amstrong number")
+        }else{
+            console.log("It is not an amstrong number")
+        }
+
+        //Do while
+        temp=numb;
+        sum=0;
+        do{
+            r=parseInt(temp)%10;
+            sum+=r*r*r;
+            temp=parseInt(temp/10); 
+        }while(temp>0) 
+        if(numb==sum){
+            console.log("Its an amstrong number")
+        }
+        else{
+            console.log("It is not an amstrong number")
+        }
+
+        //for loop
+        sum=0;
+        r;
+        for(let temp=numb;temp>0;temp=parseInt(temp/10)){
+            r=temp%10;
+            sum+=r*r*r;
+        }
+        if(numb==sum){
+            console.log("Its an amstrong number")
+        }
+        else{
+            console.log("It is not an amstrong number")
+        } 
+            
+
+
+
+        console.log("---- Fibanocci ----");
+
+        let time=Number(prompt("Enter the number to find the fibanocci"));
+        a=0;
+        let b=1;
+        let c;
+
+        s="";
+        for(let i=1;i<=time;i++){
+            s+=a+" ";
+            c=a+b;
+            a=b;
+            b=c;
+        }
+        console.log(s);
+        
+
+        //while
+        a=0;
+        b=1;
+        c;
+        i=1;
+        s="";
+
+        while(i<=time){
+            s+=a+" ";
+            i++;
+            c=a+b;
+            a=b;
+            b=c;  
+        }
+        console.log(s);
+
+        //Do while
+
+        a=0;
+        b=1;
+        c;
+        i=1;
+        s="";
+
+        do{
+            s+=a+" ";
+            i++;
+            c=a+b;
+            a=b;
+            b=c; 
+        }while(i<=time)
+        console.log(s);
+
+        console.log("---- Amstrong number series ----");
+
+        //while loop
+        let limit=Number(prompt("Enter the limit"));
+        
+        
+        let i = 1;
+        let s = "";
+
+        while (i <= limit) {
+
+            let temp = i;
+            let sum = 0;
+            let r;
+
+            while (temp > 0) {
+                r = temp % 10;
+                sum += r * r * r;
+                temp = parseInt(temp / 10);
+            }
+
+            if (i == sum) {
+                s += i + " ";
+            }
+            i++;
+        }
+        console.log(s);
+
+        //Do while
+        i = 1;
+        s = "";
+
+        do {
+
+            let temp = i;
+            let sum = 0;
+            let r;
+
+            do {
+                r = temp % 10;
+                sum += r * r * r;
+                temp = parseInt(temp / 10);
+            } while (temp > 0);
+
+            if (i == sum) {
+                s += i + " ";
+            }
+
+            i++;
+
+        } while (i <= limit);
+
+        console.log(s);
+
+        //for loop
+        s = "";
+
+        for (let i = 1; i <= limit; i++) {
+
+            let temp = i;
+            let sum = 0;
+            let r;
+
+            while (temp > 0) {
+                r = temp % 10;
+                sum += r * r * r;
+                temp = parseInt(temp / 10);
+            }
+
+            if (i == sum) {
+                s += i + " ";
+            }
+        }
+
+        console.log(s);
+
+
+        console.log("---- Prime Number series ----");
+
+        //for loop
+        n = Number(prompt("Enter the limit"));
+        s = "";
+
+        for (let i = 2; i <= n; i++) {
+
+            let count = 0;
+
+            for (let j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+
+            if (count == 2) {
+                s += i + " ";
+            }
+        }
+        console.log(s);
+
+        //while
+        s = "";
+        i = 2;
+        while (i <= n) {
+            let count = 0;
+            let j = 1;
+
+            while (j <= i) {
+                if (i % j == 0) {
+                    count++;
+                }
+                j++;
+            }
+
+            if (count == 2) {
+                s += i + " ";
+            }
+            i++;
+        }
+        console.log(s);
+
+        //Do while
+        s = "";
+        i = 2;
+
+        do {
+            let count = 0;
+            let j = 1;
+            do {
+                if (i % j == 0) {
+                    count++;
+                }
+                j++;
+
+            }while (j <= i);
+
+            if (count == 2) {
+                s += i + " ";
+            }
+            i++;
+        } while (i <= n);
+
+        console.log(s);
+
+        console.log("---- find out the given no is prime or not ----");
+
+        //for loop
+        let n = Number(prompt("Enter a number"));
+        let count = 0;
+
+        for (let i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+
+        if (count == 2) {
+            console.log("It is a Prime Number");
+        } else {
+            console.log("It is not a Prime Number");
+        }
+
+        //while loop
+        count = 0;
+        let i = 1;
+
+        while (i <= n) {
+            if (n % i == 0) {
+                count++;
+            }
+            i++;
+        }
+        if (count == 2) {
+            console.log("It is a Prime Number");
+        } else {
+            console.log("It is not a Prime Number");
+        }
+
+        //Do while
+
+        count = 0;
+        i = 1;
+        do {
+
+            if (n % i == 0) {
+                count++;
+            }
+            i++;
+        } while (i <= n);
+
+        if (count == 2) {
+            console.log("It is a Prime Number");
+        } else {
+            console.log("It is not a Prime Number");
+        } 
+
+        console.log("---- Print the 5 Table(1 * 5 = 5) ----");
+
+        //for loop
+        for (let i = 1; i <= 10; i++) {
+            console.log(i + " * 5 = " + (i * 5));
+        }
+
+        //while
+        i = 1;
+        while (i <= 10) {
+            console.log(i + " * 5 = " + (i * 5));
+            i++;
+        }
+
+        //Do while
+        i = 1;
+        do {
+            console.log(i + " * 5 = " + (i * 5));
+            i++;
+        } while (i <= 10); 
+
+
+
+
+
+        
+
+    </script>
+</body>
+</html>
