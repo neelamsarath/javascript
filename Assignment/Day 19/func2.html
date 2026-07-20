@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        console.log("Question 12 to 20")
+        
+        console.log("---- factorial of a given no // 5!=5*4*3*2*1 =120 ----") 
+
+        //without parameter
+        n = Number(prompt("Enter a number"));
+        function fact(){
+        let f = 1;
+
+        for (let i = n; i >= 1; i--) {
+            f *= i;
+        }
+        console.log(f);
+        }
+        fact();
+
+        //with parameter
+        function fact1(a){
+        let f = 1;
+
+        for (let i = n; i >= a; i--) {
+            f *= i;
+        }
+        console.log(f);
+        }
+        fact1(1);
+
+        //with return
+        function fact2(a){
+        let f = 1;
+
+        for (let i = n; i >= a; i--) {
+            f *= i;
+        }
+        return f;
+        }
+        let result=fact2(1);
+        console.log(result);
+
+        console.log("---- find out the given no is prime or not ----");
+
+        //without parameter
+        let n = Number(prompt("Enter a number"));
+        function prime(){
+        let count = 0;
+
+        for (let i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+
+        if (count == 2) {
+            console.log("It is a Prime Number");
+        } else {
+            console.log("It is not a Prime Number");
+        }
+        }
+        prime();
+
+        //with parameter
+        function prime1(n){
+        let count = 0;
+
+        for (let i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+
+        if (count == 2) {
+            console.log("It is a Prime Number");
+        } else {
+            console.log("It is not a Prime Number");
+        }
+        }
+        prime1(n);
+
+        //with return
+        function prime2(n){
+        let count = 0;
+
+        for (let i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+        return count==2;
+        }
+        result=prime2(n);
+        if (result) {
+            console.log("It is a Prime Number");
+        } else {
+            console.log("It is not a Prime Number");
+        }
+
+        console.log("---- Prime Number series ----");
+
+        //without parameter
+        n = Number(prompt("Enter the limit"));
+        function primeseries(){
+        s = "";
+
+        for (let i = 2; i <= n; i++) {
+
+            let count = 0;
+
+            for (let j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+
+            if (count == 2) {
+                s += i + " ";
+            }
+        }
+        console.log(s);
+        }
+        primeseries();
+
+        //with parameter
+        function primeseries1(n){
+        s = "";
+
+        for (let i = 2; i <= n; i++) {
+
+            let count = 0;
+
+            for (let j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+
+            if (count == 2) {
+                s += i + " ";
+            }
+        }
+        console.log(s);
+        }
+        primeseries1(n);
+
+        //with return
+        function primeseries2(n){
+        s = "";
+
+        for (let i = 2; i <= n; i++) {
+
+            let count = 0;
+
+            for (let j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+
+            if (count == 2) {
+                s += i + " ";
+            }
+        }
+        return s;
+        }
+        result=primeseries2(n);
+        console.log(s);
+
+        console.log("---- Amstrong ----");
+
+        
+        let numb=Number(prompt("Enter the number to check if it is a amstrong or not"));
+        //without parameter
+        function ams(){
+            let temp=numb;
+            let r;
+            let sum=0;
+
+            while(temp>0){
+                r=parseInt(temp)%10;
+                sum+=r*r*r;
+                temp=parseInt(temp/10);
+            }
+            if(numb==sum){
+                console.log("Its an amstrong number")
+            }else{
+                console.log("It is not an amstrong number")
+            }
+        }
+        ams();
+
+        //with parameter
+        function ams1(numb){
+            let temp=numb;
+            let r;
+            let sum=0;
+
+            while(temp>0){
+                r=parseInt(temp)%10;
+                sum+=r*r*r;
+                temp=parseInt(temp/10);
+            }
+            if(numb==sum){
+                console.log("Its an amstrong number")
+            }else{
+                console.log("It is not an amstrong number")
+            }
+        }
+        ams1(numb);
+
+        //with return
+        function ams2(numb){
+            let temp=numb;
+            let r;
+            let sum=0;
+
+            while(temp>0){
+                r=parseInt(temp)%10;
+                sum+=r*r*r;
+                temp=parseInt(temp/10);
+            }
+           return numb==sum;
+        }
+        result=ams2(numb);
+        if(result){
+            console.log("Its an amstrong number")
+        }else{
+            console.log("It is not an amstrong number")
+        }
+
+        console.log("---- Amstrong number series ----");
+
+        
+        let limit=Number(prompt("Enter the limit"));
+        //without parameter
+        function amstseries(){
+            let i = 1;
+            let s = "";
+
+            while (i <= limit) {
+
+                let temp = i;
+                let sum = 0;
+                let r;
+
+                while (temp > 0) {
+                    r = temp % 10;
+                    sum += r * r * r;
+                    temp = parseInt(temp / 10);
+                }
+
+                if (i == sum) {
+                    s += i + " ";
+                }
+                i++;
+            }
+            console.log(s);
+        }
+        amstseries();
+
+        //with parameter
+        function amstseries1(limit){
+            let i = 1;
+            let s = "";
+
+            while (i <= limit) {
+
+                let temp = i;
+                let sum = 0;
+                let r;
+
+                while (temp > 0) {
+                    r = temp % 10;
+                    sum += r * r * r;
+                    temp = parseInt(temp / 10);
+                }
+
+                if (i == sum) {
+                    s += i + " ";
+                }
+                i++;
+            }
+            console.log(s);
+        }
+        amstseries1(limit);
+
+        //with return
+        function amstseries2(limit){
+            let i = 1;
+            let s = "";
+
+            while (i <= limit) {
+
+                let temp = i;
+                let sum = 0;
+                let r;
+
+                while (temp > 0) {
+                    r = temp % 10;
+                    sum += r * r * r;
+                    temp = parseInt(temp / 10);
+                }
+
+                if (i == sum) {
+                    s += i + " ";
+                }
+                i++;
+            }
+            return s;
+        }
+        result=amstseries2(limit);
+        console.log(result);
+
+        console.log("---- Fibanocci ----");
+
+        let time=Number(prompt("Enter the number to find the fibanocci"));
+
+        //without parameter
+        function fib(){
+            a=0;
+            let b=1;
+            let c;
+
+            s="";
+            for(let i=1;i<=time;i++){
+                s+=a+" ";
+                c=a+b;
+                a=b;
+                b=c;
+            }
+            console.log(s);
+            }
+        fib();
+
+        //with parameter
+        function fib1(time){
+            a=0;
+            let b=1;
+            let c;
+
+            s="";
+            for(let i=1;i<=time;i++){
+                s+=a+" ";
+                c=a+b;
+                a=b;
+                b=c;
+            }
+            console.log(s);
+            }
+        fib1(time);
+
+         //with return
+        function fib2(time){
+            a=0;
+            let b=1;
+            let c;
+
+            s="";
+            for(let i=1;i<=time;i++){
+                s+=a+" ";
+                c=a+b;
+                a=b;
+                b=c;
+            }
+            return s;
+            }
+        result=fib2(time);
+        console.log(result);
+
+        console.log("---- Print the 5 Table(1 * 5 = 5) ----");
+
+        //without parameter
+        function tables(){
+            for (let i = 1; i <= 10; i++) {
+                console.log(i + " * 5 = " + (i * 5));
+            }
+        }
+        tables();
+
+        //with parameter
+        function tables1(a){
+            for (let i = 1; i <= a; i++) {
+                console.log(i + " * 5 = " + (i * 5));
+            }
+        }
+        tables1(10);
+
+        //with return
+        function tables2(a){
+            let s="";
+            for (let i = 1; i <= a; i++) {
+                s += i + " * 5 = " + (i * 5) + "\n";
+            }
+            return s;
+        }
+        result=tables2(10);
+        console.log(result);
+
+        console.log("---- palindrome ----") 
+
+        let word=prompt("Enter a word");
+
+        //without parameter
+        function palindrome(){
+            let a="";
+            for(let i=word.length-1;i>=0;i--){
+                a+=word[i];
+            }
+            if(word==a){
+                console.log("Its a palindrome")
+            }else{
+                console.log("Its not a palindrome")
+            } 
+        }
+        palindrome();
+
+         //with parameter
+        function palindrome1(word){
+            let a="";
+            for(let i=word.length-1;i>=0;i--){
+                a+=word[i];
+            }
+            if(word==a){
+                console.log("Its a palindrome")
+            }else{
+                console.log("Its not a palindrome")
+            } 
+        }
+        palindrome1(word);
+
+        function palindrome2(word){
+            let a="";
+            for(let i=word.length-1;i>=0;i--){
+                a+=word[i];
+            }
+            return word==a;
+        }
+        result=palindrome2(word);
+        if(result){
+            console.log("Its a palindrome")
+        }else{
+            console.log("Its not a palindrome")
+        } 
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("Questions 1 to 11")
+        console.log("---- 1 2 3 4 5 6 7 8  series of 1 to 20 ----")
+        
+       //without parameter
+        function serie(){
+        var s="";
+        for(let i=1;i<=20;i++){
+            s+=i+" ";
+        }
+        console.log(s);
+        }
+        serie(); 
+
+        //with parameter
+        function series(n){
+        var s="";
+        for(let i=1;i<=n;i++){
+            s+=i+" ";
+        }
+        console.log(s);
+        }
+        series(20); 
+
+        //return
+        function series1(n){
+        var s="";
+        for(let i=1;i<=n;i++){
+            s+=i+" ";
+        }
+        return s;
+        }
+        let result=series1(20)
+        console.log(result);
+
+        console.log("---- 1 3 5 7 9  series of 1 to 20 odd ----")
+
+        //without parameter
+        function odd(){
+        s=""
+        for(let i=0;i<20;i++){
+            s+=(i+=1)+" ";
+        }
+        console.log(s);
+        }
+        odd();
+
+        //with parameter
+        function odd1(o){
+        s=""
+        for(let i=0;i<o;i++){
+            s+=(i+=1)+" ";
+        }
+        console.log(s);
+        }
+        odd1(20);
+
+        //with return
+        function odd2(o){
+        s=""
+        for(let i=0;i<o;i++){
+            s+=(i+=1)+" ";
+        }
+        return s;
+        }
+        result=odd2(20);
+        console.log(result)
+
+        console.log("---- 0 2 4 6 8    series of even 0 to 20 Even ----")
+
+        //without parameter
+        function even(){
+        s=""
+        for(let i=1;i<20;i++){
+            s+=(i+=1)+" ";
+        }
+        console.log(s);
+        }
+        even();
+
+        //with parameter
+        function even1(e){
+        s=""
+        for(let i=1;i<e;i++){
+            s+=(i+=1)+" ";
+        }
+        console.log(s);
+        }
+        even1(20);
+
+        //with return
+        function even2(e){
+        s=""
+        for(let i=1;i<e;i++){
+            s+=(i+=1)+" ";
+        }
+        return s;
+        }
+        result=even2(20);
+        console.log(result);
+
+        console.log("---- 0 5 10 15 20 25(5 series) ----");
+
+        //without parameter
+        function five(){
+        s="";
+        for(let i=0;i<=50;i+=5){
+            s+=i+" ";
+        }
+        console.log(s);
+        }
+        five();
+
+        //with parameter
+        function five1(f){
+        s="";
+        for(let i=0;i<=f;i+=5){
+            s+=i+" ";
+        }
+        console.log(s);
+        }
+        five1(50);
+
+         //with return
+        function five2(f){
+        s="";
+        for(let i=0;i<=f;i+=5){
+            s+=i+" ";
+        }
+        return s;
+        }
+        result=five2(50);
+        console.log(result);
+
+
+        console.log("---- 1 + 2 + 3 + 4 + ..... ----");
+
+        //without parameter
+        function add(){
+        s="";
+        for(let i=1;i<=10;i++){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        add();
+
+         //with parameter
+        function add1(a){
+        s="";
+        for(let i=1;i<=a;i++){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        add1(10);
+
+         //with return 
+        function add2(a){
+        s="";
+        for(let i=1;i<=a;i++){
+            s+=i+" + ";     
+        }
+        return s;
+        }
+        result=add2(10);
+        console.log(result);
+
+        console.log("---- 0 + 2 + 4 + 6 + ... ----");
+
+        //without parameter
+        function evenadd(){
+        s="";
+        for(let i=0;i<=10;i+=2){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        evenadd();
+
+         //with parameter
+        function evenadd1(q){
+        s="";
+        for(let i=0;i<=q;i+=2){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        evenadd1(10);
+
+         //with return
+        function evenadd2(q){
+        s="";
+        for(let i=0;i<=q;i+=2){
+            s+=i+" + ";     
+        }
+        return s;
+        }
+        result=evenadd2(10);
+        console.log(result);
+
+
+        console.log("----  1 + 3 + 5 + 7 + 9..... ----");
+
+        //without parameter
+        function oddadd(){
+        s="";
+        for(let i=1;i<=10;i+=2){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        oddadd();
+
+         //with parameter
+        function oddadd1(w){
+        s="";
+        for(let i=1;i<=w;i+=2){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        oddadd1(10);
+
+         //with return
+        function oddadd2(w){
+        s="";
+        for(let i=1;i<=w;i+=2){
+            s+=i+" + ";     
+        }
+        return s;
+        }
+        result=oddadd2(10);
+        console.log(result);
+
+
+        console.log("----  0 + 5 + 10 + 15 + 20 + .... ----");
+
+        //without parameter 
+        function fiveadd(){
+        s="";
+        for(let i=0;i<=30;i+=5){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        fiveadd();
+
+        //with parameter 
+        function fiveadd1(t){
+        s="";
+        for(let i=0;i<=t;i+=5){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        fiveadd1(30);
+
+        //with retunr 
+        function fiveadd2(t){
+        s="";
+        for(let i=0;i<=t;i+=5){
+            s+=i+" + ";     
+        }
+        return s;
+        }
+        result=fiveadd2(30);
+        console.log(result);
+
+
+        console.log("----  1 / 1! + 2 / 2! + 3 / 3! + 4 / 4!.....  ----");
+
+        //without parameter
+        function fact(){
+        s="";
+        for(let i=1;i<=5;i++){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        console.log(s); 
+        }
+        fact();
+
+         //with parameter
+        function fact1(v){
+        s="";
+        for(let i=1;i<=v;i++){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        console.log(s); 
+        }
+        fact1(5);
+
+        //with return
+        function fact1(v){
+        s="";
+        for(let i=1;i<=v;i++){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        return s; 
+        }
+        result=fact1(5);
+        console.log(result);
+
+        console.log("----   0 + 2 / 2! + 4 / 4! + 6 / 6!....  ----");
+
+        //without parameter
+        function evenfact(){
+        s="";
+        for(let i=0;i<=10;i+=2){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        console.log(s); 
+        }
+        evenfact();
+
+        //with parameter
+        function evenfact1(b){
+        s="";
+        for(let i=0;i<=b;i+=2){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        console.log(s); 
+        }
+        evenfact1(10);
+
+        //with return
+        function evenfact2(b){
+        s="";
+        for(let i=0;i<=b;i+=2){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        return s; 
+        }
+        result=evenfact2(10);
+        console.log(result);
+
+
+        console.log("---- 1 / 1! + 3 / 3! + 5 / 5!....  ----");
+
+        //without parameter
+        function oddfact(){
+        s="";
+        for(let i=1;i<=10;i+=2){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        console.log(s); 
+        }
+        oddfact();
+
+        //with parameter
+        function oddfact1(y){
+        s="";
+        for(let i=1;i<=y;i+=2){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        console.log(s); 
+        }
+        oddfact1(10);
+
+         //with return
+        function oddfact2(y){
+        s="";
+        for(let i=1;i<=y;i+=2){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        return s; 
+        }
+        result=oddfact2(10);
+        console.log(result);
+
+    </script>
+</body>
+</html>
