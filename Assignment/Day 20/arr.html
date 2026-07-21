@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("---- 1 2 3 4 5 6 7 8  series of 1 to 20 ----")
+
+        const series = () => {
+        let s="";
+        for(let i=1;i<=20;i++){
+            s+=i+" ";
+        }
+        console.log(s);
+        }
+        series();
+
+         console.log("---- 1 3 5 7 9  series of 1 to 20 odd ----")
+
+        const odd = () =>{
+        s=""
+        for(let i=0;i<20;i++){
+            s+=(i+=1)+" ";
+        }
+        console.log(s);
+        }
+        odd();
+
+
+         console.log("---- 0 2 4 6 8    series of even 0 to 20 Even ----")
+
+        const even=()=>{
+        s=""
+        for(let i=1;i<20;i++){
+            s+=(i+=1)+" ";
+        }
+        console.log(s);
+        }
+        even();
+
+        console.log("---- 0 5 10 15 20 25(5 series) ----");
+
+        const five=()=>{
+        s="";
+        for(let i=0;i<=50;i+=5){
+            s+=i+" ";
+        }
+        console.log(s);
+        }
+        five();
+
+        console.log("---- 1 + 2 + 3 + 4 + ..... ----");
+
+        const add=()=>{
+        s="";
+        for(let i=1;i<=10;i++){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        add();
+
+        console.log("---- 0 + 2 + 4 + 6 + ... ----");
+
+        const evenadd=()=>{
+        s="";
+        for(let i=0;i<=10;i+=2){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        evenadd();
+
+         console.log("----  1 + 3 + 5 + 7 + 9..... ----");
+
+        const oddadd=()=>{
+        s="";
+        for(let i=1;i<=10;i+=2){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        oddadd();
+
+        console.log("----  0 + 5 + 10 + 15 + 20 + .... ----");
+ 
+        const fiveadd=()=>{
+        s="";
+        for(let i=0;i<=30;i+=5){
+            s+=i+" + ";     
+        }
+        console.log(s);
+        }
+        fiveadd();
+
+        console.log("----  1 / 1! + 2 / 2! + 3 / 3! + 4 / 4!.....  ----");
+
+        const fact=()=>{
+        s="";
+        for(let i=1;i<=5;i++){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        console.log(s); 
+        }
+        fact();
+
+        console.log("----   0 + 2 / 2! + 4 / 4! + 6 / 6!....  ----");
+
+        const evenfact=()=>{
+        s="";
+        for(let i=0;i<=10;i+=2){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        console.log(s); 
+        }
+        evenfact();
+
+        console.log("---- 1 / 1! + 3 / 3! + 5 / 5!....  ----");
+
+        const oddfact=()=>{
+        s="";
+        for(let i=1;i<=10;i+=2){
+            s += i + " / " + i +"!"+ " + ";     
+        }
+        console.log(s); 
+        }
+        oddfact();
+
+
+
+        console.log("---- factorial of a given no // 5!=5*4*3*2*1 =120 ----") 
+
+        const fact1=()=>{
+        n = Number(prompt("Enter a number to factorial"));
+        let f = 1;
+
+        for (let i = n; i >= 1; i--) {
+            f *= i;
+        }
+        console.log(f);
+        }
+        fact1();
+
+
+
+        console.log("---- find out the given no is prime or not ----");
+        
+        const prime=()=>{
+        let n = Number(prompt("Enter a number to find out it is prime or not"));    
+        let count = 0;
+
+        for (let i = 1; i <= n; i++) {
+            if (n % i == 0) {
+                count++;
+            }
+        }
+
+        if (count == 2) {
+            console.log("It is a Prime Number");
+        } else {
+            console.log("It is not a Prime Number");
+        }
+        }
+        prime();
+
+
+
+        console.log("---- Prime Number series ----");
+
+        const primeseries=()=>{
+        n = Number(prompt("Enter the limit to find prime number series"));
+        s = "";
+
+        for (let i = 2; i <= n; i++) {
+
+            let count = 0;
+
+            for (let j = 1; j <= i; j++) {
+                if (i % j == 0) {
+                    count++;
+                }
+            }
+
+            if (count == 2) {
+                s += i + " ";
+            }
+        }
+        console.log(s);
+        }
+        primeseries();
+
+
+
+        console.log("---- Amstrong ----");
+
+        const ams=()=>{
+            let numb=Number(prompt("Enter the number to check if it is a amstrong or not"));
+            let temp=numb;
+            let r;
+            let sum=0;
+
+            while(temp>0){
+                r=parseInt(temp)%10;
+                sum+=r*r*r;
+                temp=parseInt(temp/10);
+            }
+            if(numb==sum){
+                console.log("Its an amstrong number")
+            }else{
+                console.log("It is not an amstrong number")
+            }
+        }
+        ams();
+
+
+
+        console.log("---- Amstrong number series ----");
+
+        const amstseries=()=>{
+            let limit=Number(prompt("Enter the limit for amstrong series"));
+            let i = 1;
+            let s = "";
+
+            while (i <= limit) {
+
+                let temp = i;
+                let sum = 0;
+                let r;
+
+                while (temp > 0) {
+                    r = temp % 10;
+                    sum += r * r * r;
+                    temp = parseInt(temp / 10);
+                }
+
+                if (i == sum) {
+                    s += i + " ";
+                }
+                i++;
+            }
+            console.log(s);
+        }
+        amstseries();
+
+
+        console.log("---- Fibanocci ----");
+
+        const fib=()=>{
+            let time=Number(prompt("Enter the number to find the fibanocci"));
+            a=0;
+            let b=1;
+            let c;
+
+            s="";
+            for(let i=1;i<=time;i++){
+                s+=a+" ";
+                c=a+b;
+                a=b;
+                b=c;
+            }
+            console.log(s);
+            }
+        fib();
+
+
+        console.log("---- Print the 5 Table(1 * 5 = 5) ----");
+
+        const tables=()=>{
+            for (let i = 1; i <= 10; i++) {
+                console.log(i + " * 5 = " + (i * 5));
+            }
+        }
+        tables();
+
+
+        console.log("---- Sum of Digit ----");
+
+        const sum = (n) => {
+            let s = 0;
+
+            for (let i = 1; i <= n; i++) {
+                s += i;
+            }
+
+        return s;
+        }
+        console.log(sum(10));
+
+
+
+        console.log("---- palindrome ----") 
+
+        let word=prompt("Enter a word");
+
+        const palindrome=()=>{
+            let a="";
+            for(let i=word.length-1;i>=0;i--){
+                a+=word[i];
+            }
+            if(word==a){
+                console.log("Its a palindrome")
+            }else{
+                console.log("Its not a palindrome")
+            } 
+        }
+        palindrome();
+        
+    </script>
+</body>
+</html>
