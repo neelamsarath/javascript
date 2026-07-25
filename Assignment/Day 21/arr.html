@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("--- Use push, pop, shift, unshift on an array ---");
+
+            let cars=["BMW","Audi","Range rover","Defender"];
+
+            cars.push("Jaguar");
+            console.log(cars);
+
+            cars.pop();
+            console.log(cars);
+
+            cars.shift();
+            console.log(cars);
+
+            cars.unshift("Ferrai");
+            console.log(cars);
+
+
+        console.log("--- Print all elements of an array using for loop ---");
+
+            cars=["BMW","Audi","Range rover","Defender"];  
+            for(let i=0;i<cars.length;i++){
+                i+=1;
+            }
+            console.log(cars);
+   
+        console.log("--- Use map to double all numbers in an array ---");
+
+            const num = [1,2,3,4,5];
+            const double = num.map(n=>n*2);
+
+            console.log(`Original array : ${num}`);
+            console.log("Doubles array : " +double);
+
+        console.log("--- Use filter to get even numbers from an array ---");
+
+            const nums = [11,12,13,14,15,16];
+            const even = nums.filter(n => n%2==0);
+            console.log(even); 
+
+        console.log("--- Use reduce to find the sum of an array ---");
+
+            const number = [1,2,3,4,5];
+            const reduce = number.reduce((total,n) => total+n,0);  
+            console.log(reduce); 
+
+        console.log("--- Find the first number greater than 10 ---");
+
+            const look = [3,5,7,9,20,50];
+            const great = look.find(n => n>10);
+            console.log(great);
+
+            
+        console.log("--- Check if array includes a specific value ---");
+
+            const valid= [5,7,15,81];
+            console.log(valid.includes(15));
+            console.log(valid.includes(55));
+
+    </script>
+</body>
+</html>

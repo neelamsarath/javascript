@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+           /*  console.log("-- 1.Find the Sum , Average of Array Elements --")
+
+            const arr = [1,2,3,4,5];
+            let sum=0;
+            for(let i=0;i<arr.length;i++){
+                sum+=arr[i];
+            }   
+            console.log(`The sum of the array is : ${sum}`);   
+            let average = sum / arr.length;
+            console.log(`The average of the array is ${average}`);  */  
+
+
+        console.log("-- 2.Find the Largest Element of array elements --");
+
+            const arrr=[23,32,56,678,54];
+            let largest=arrr[0];
+            for(let i=0;i<arrr.length;i++){                
+                if(arrr[i]>largest){
+                    largest=arrr[i];
+                }
+            }
+            console.log(largest);
+
+        console.log("-- 3.Find the smallest Element of array elements --");
+
+            const arr1=[23,32,56,678,4];
+            let smallest = arr1[0];
+            for(let i=0;i<arr1.length;i++){                
+                if(arr1[i]<smallest){
+                    smallest=arr1[i];
+                }
+            }
+            console.log(smallest);
+
+            
+        console.log("-- 4.Count positive and negative numbers --");
+
+            let pos=[-1,-4,5,7,8,-9,-10];
+            let count=0;
+            let cou=0;
+            for(let i=0;i<pos.length;i++){
+                if(pos[i]<0){
+                    count++;
+                }
+                else if(pos[i]>0){
+                    cou++;
+                }
+                else{
+                    console.log("No pos and neg element");
+                }
+            }
+            console.log(`The count of Negtive number is : ${count}`);
+            console.log(`The count of Positive number is : ${cou}`);            
+            
+        console.log("-- 5.Print duplicate elements --[10, 20, 30, 20, 40, 10, 50];");
+
+            const dup = [5,1,7,5,7,3];
+
+            for(let i=0;i<dup.length;i++){
+                for(let j=i+1;j<dup.length;j++){
+                    if(dup[i]===dup[j]){
+                        console.log(dup[i]);
+                }
+            }
+        }       
+
+        console.log("-- 6.Search an Element --");
+
+            let sar = [2,5,6,3,9];
+            let ele = parseInt(prompt("Enter a value to be searched :"))
+            let found=false;
+
+            for(let i=0;i<sar.length;i++){
+                if(sar[i] === ele){
+                    found=true;
+                    console.log(ele + " is found at position " +(i+1));
+                    console.log("Index = " +i);
+                    break;
+                }
+            } 
+
+        console.log("-- 7.Find the frequency of each element");
+
+            let bike = [1,2,1,2,3];
+            let visited=[];
+
+            for(let i=0;i<bike.length;i++){
+                if(visited[i]){
+                    continue;
+                }
+                let count = 1;
+                for(let j=i+1;j<bike.length;j++){
+                    if(bike[i]===bike[j]){
+                        count++;
+                        visited[j]=true;
+                    }
+               }
+               console.log(bike[i]+" occurs "+count+ " times");
+            }
+            
+        console.log("-- 8.Check whether an array is sorted");
+
+            let num = Number(prompt("Enter the size of array"));
+            let sor = [];
+
+            for(let i=0;i<num;i++){
+                sor[i]=Number(prompt("Enter the values of array "+(i+1)));
+            }
+
+            let sorted = true;
+
+            for(let i=0;i<num-1;i++){
+                    if(sor[i]>sor[i+1]){
+                        sorted = false;
+                        break;
+                    }
+                } 
+            if(sorted){
+                console.log("Array is Sorted");
+            }else{
+                console.log("Array is Not Sorted");
+            }
+
+
+        console.log("-- 9.Find the missing number in an array (1 to n)");
+
+            let n=Number(prompt("Enter size of array"));
+            let mis=[];
+
+            for(let i=0;i<n-1;i++){
+                mis[i]=Number(prompt("Enter the value"))
+            }
+
+            let sum=0;
+            let expected=0;
+
+            for(let i=0;i<=n;i++){
+                expected+=i;
+            }
+
+            for(let i=0;i<mis.length;i++){
+                sum+=mis[i];
+            }
+            let missing= expected-sum;
+            console.log("The missing number is " +missing);
+
+            
+        console.log("10.Separate even and odd numbers into two arrays");
+
+            let array=[1,2,3,4,5,6];
+            let even=[];
+            let odd=[];
+
+            for(let i=0;i<array.length;i++){
+                if(array[i]%2==0){
+                    even.push(array[i]);
+                }else{
+                    odd.push(array[i]);
+                }
+            }
+            console.log("Even array :",even);
+            console.log("odd array :",odd);
+
+
+    </script>
+</body>
+</html>
