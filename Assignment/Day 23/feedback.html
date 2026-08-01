@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+</head>
+<body>
+    <div class="container">
+
+    <h2>Customer Feedback Form</h2>    
+    <form id="feedback">
+        <label>Full Name :</label>
+        <input type="text" id="name" placeholder="Enter Username "><br><br>
+
+        <label for="email">Email :</label>
+        <input type="email" id="email" placeholder="Enter email"><br><br>
+
+        <label for="Reason for visit">Reason for Visit / Purchase :</label><br>
+
+        <div class="radio-group">
+            <label><input type="radio" name="reason" value="Product Purchase"> Product Purchase</label><br>
+            <label><input type="radio" name="reason" value="Customer Support"> Customer Support</label><br>
+            <label><input type="radio" name="reason" value="Browsing / Research"> Browsing / Research</label><br>
+            <label><input type="radio" name="reason" value="Other"> Other</label>
+        </div><br>
+
+        <label for="Overall Satisfaction">Overall Satisfaction :</label>
+
+         <div class="radio-group">
+            <label><input type="radio" name="satisfaction" value="1">1 - Very Dissatisfied</label><br>
+            <label><input type="radio" name="satisfaction" value="2">2 - Dissatisfied</label><br>
+            <label><input type="radio" name="satisfaction" value="3">3 - Neutral</label><br>
+            <label><input type="radio" name="satisfaction" value="4">4 - Satisfied</label><br>
+            <label><input type="radio" name="satisfaction" value="5">5 - Very Satisfied</label>
+        </div><br>
+
+        <label for="Product Quality">Product / Service Quality :<label><br>
+
+        <div class="radio-group">
+            <label><input type="radio" name="quality" value="Excellent">Excellent</label><br>
+            <label><input type="radio" name="quality" value="Good">Good</label><br>
+            <label><input type="radio" name="quality" value="Average">Average</label><br>
+            <label><input type="radio" name="quality" value="Poor">Poor</label><br>
+            <label><input type="radio" name="quality" value="Very Poor">Very Poor</label>
+        </div><br>
+
+        <label for="ease of use">Ease of Use / Navigation :</label><br>
+
+        <div class="radio-group">
+            <label><input type="radio" name="ease" value="Very Easy">Very Easy</label><br>
+            <label><input type="radio" name="ease" value="Easy">Easy</label><br>
+            <label><input type="radio" name="ease" value="Neutral">Neutral</label><br>
+            <label><input type="radio" name="ease" value="Difficult">Difficult</label><br>
+            <label><input type="radio" name="ease" value="Very Difficult">Very Difficult</label>
+        </div><br>
+
+        <label for="Staff/Customer support">Staff/Customer support Helpfulness :</label><br>
+
+        <div class="radio-group">
+            <label><input type="radio" name="staff" value="N/A">N/A - No Interaction</label><br>
+            <label><input type="radio" name="staff" value="Extremely Helpful">Extremely Helpful</label><br>
+            <label><input type="radio" name="staff" value="Somewhat Helpful">Somewhat Helpful</label><br>
+            <label><input type="radio" name="staff" value="Unhelpful">Unhelpful</label>
+        </div><br>
+        
+        <label>How likely are you to recommend us to a friend?</label><br>
+        <input type="number" id="score" min="0" max="10" placeholder="Score"><br><br>
+
+        <label for="what can we improve?">What can we improve?</label>
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" name="improve" value="Product Selection">Product Selection</label><br>
+            <label><input type="checkbox" name="improve" value="Pricing">Pricing</label><br>
+            <label><input type="checkbox" name="improve" value="Website/App">Website / App</label><br>
+            <label><input type="checkbox" name="improve" value="Delivery">Delivery / Service Speed</label><br>
+            <label><input type="checkbox" name="improve" value="Customer Support">Customer Support</label>
+        </div><br>
+
+
+        <label for="Additional Comments">Additional Comments :</label><br>
+        <textarea id="comments" rows="9"></textarea><br>
+
+        <button type="button" onclick="Submit()">Submit</button>
+        <button type="button" onclick="Displayfeedback()">Display Feedback </button>
+        </div>
+
+        <hr>
+         <h3>Stored Feedback</h3>
+         <div id="output"></div>
+        
+    </form>
+
+    <script>
+        function Submit() {
+
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let score = document.getElementById("score").value;
+            let comments = document.getElementById("comments").value;
+            
+            let reason = "";
+            let reasons = document.getElementsByName("reason");
+
+            for (let r of reasons) {
+                if (r.checked) {
+                    reason = r.value;
+                }
+            }
+
+            let satisfaction = "";
+            let sat = document.getElementsByName("satisfaction");
+
+            for (let s of sat) {
+                if (s.checked) {
+                    satisfaction = s.value;
+                }
+            }
+
+            let quality = "";
+            let qualities = document.getElementsByName("quality");
+
+            for (let q of qualities) {
+                if (q.checked) {
+                    quality = q.value;
+                }
+            }
+
+            let ease = "";
+            let eases = document.getElementsByName("ease");
+
+            for (let e of eases) {
+                if (e.checked) {
+                    ease = e.value;
+                }
+            }
+
+            let staff = "";
+            let staffs = document.getElementsByName("staff");
+
+            for (let st of staffs) {
+                if (st.checked) {
+                    staff = st.value;
+                }
+            }
+
+            let improve = [];
+            let checks = document.getElementsByName("improve");
+
+            for (let c of checks) {
+                if (c.checked) {
+                    improve.push(c.value);
+                }
+            }
+
+            let Feedback = {
+                name: name,
+                email: email,
+                reason: reason,
+                satisfaction: satisfaction,
+                quality: quality,
+                ease: ease,
+                staff: staff,
+                score: score,
+                improve: improve,
+                comments: comments
+            };
+
+            localStorage.setItem("Feedback", JSON.stringify(Feedback));
+            alert("Feedback Submitted Successfully");
+        }
+
+        function Displayfeedback() {
+            let data = JSON.parse(localStorage.getItem("Feedback"));
+            console.log(data);
+
+            alert(
+                "Name : " + data.name +
+                "\nEmail : " + data.email +
+                "\nReason : " + data.reason +
+                "\nSatisfaction : " + data.satisfaction +
+                "\nQuality : " + data.quality +
+                "\nEase : " + data.ease +
+                "\nStaff : " + data.staff +
+                "\nRecommendation Score : " + data.score +
+                "\nImprove : " + data.improve.join(", ") +
+                "\nComments : " + data.comments
+            );
+        }
+                
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>
