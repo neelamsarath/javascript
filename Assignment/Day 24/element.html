@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <h2>Task 1</h2>
+        <h2 id="heading">A usual Day</h2>
+        <button type=button onclick="changeheading()">Change</button>
+    
+    <h2>Task 2</h2>
+        <p id="para">Great power comes with great responsibilities</p>
+        <button onclick="changeStyle()">Change Style</button>
+
+    <h2>Task 3</h2>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <p>Paragraph 3</p>
+        <p>Paragraph 4</p>
+        <button onclick="changeColor()">Change Color</button> 
+
+    <h2>Task 4</h2>
+        <ul>
+            <li class="one">Fight Club</li>
+            <li class="one">Amazing Spider-Man</li>
+            <li class="one">Meiazhagan</li>
+            <li class="one">Brand New Day</li>
+            <li class="one">Anbe shivam</li>
+        </ul>
+        <p id="result"></p>
+        <button onclick="Displaycount()">Count</button>
+
+    <h2>Task 5:</h2>
+        <p class="two">Are you Peter Parker</p>
+        <p class="two">Or a Spiderman</p>
+        <p class="two">I'm Both</p>
+        <button onclick="colorchange()">Change Color</button>
+
+    <h2>Task 6</h2>
+        <button class="three">Use ME</button>
+        <button class="three">Use ME</button>
+        <button class="three">Use ME</button>
+        <button class="three">Use ME</button><br><br>
+
+        <button onclick="disable()">Disable</button>
+
+    <h2>Task 7:</h2>
+        <h3 id="four">What bro!! its very wrong bro</h3>
+
+        <button onclick="Matram()">Touch Me</button>
+
+    <h2>Task 8:</h2>
+        <h3>Movies :</h3>
+        
+        <p Class="six">Fight Club</p>
+        <p Class="six">Amazing Spider-man</p>
+        <p Class="six">Brand New Day</p>
+        <p Class="six">Anbe shivam</p>
+        <p Class="six">Sivaji</p>
+
+        <button onclick="maatram()">Click me</button>
+
+    </div>
+
+    <script>
+        function changeheading(){
+            document.getElementById("heading").innerHTML="It's a Brand new day";
+        }
+
+        function changeStyle(){
+            let p=document.getElementById("para");
+            p.style.color="blue";
+            p.style.fontSize="30px";
+        }
+
+        function changeColor(){
+            let para=document.getElementsByTagName("p");
+            for(let i=0;i<para.length;i++){
+                para[i].style.color="green";
+            }
+
+        } 
+
+        function Displaycount(){
+            let count=document.getElementsByClassName("one");
+            document.getElementById("result").innerHTML="Total List: " + count.length;   
+        }
+
+        function colorchange(){
+            let color=document.getElementsByClassName("two");
+            for(let i=0;i<color.length;i++){
+                color[i].style.color="red";
+            }
+        }
+
+        function disable(){
+            let dis=document.getElementsByClassName("three");
+            for(let i=0;i<dis.length;i++){
+                dis[i].disabled=true;
+            }
+        }
+
+        function Matram(){
+            document.querySelector("#four").innerHTML="I don't care..";
+        }
+
+        function maatram(){
+            let movie=document.querySelectorAll(".six");
+
+            for(let i=0;i<movie.length;i++){
+                movie[i].style.color="red";
+                movie[i].style.fontStyle="italic";
+            }
+        }
+
+    </script>
+</body>
+</html>
