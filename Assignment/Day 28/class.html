@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Task 1:
+        console.log("--- Student Details :");
+
+        class Student {
+            constructor(name, age, course) {
+                this.name = name;
+                this.age = age;
+                this.course = course;
+            }
+
+            display() {
+                console.log(`
+                    Name: ${this.name}, 
+                    Age: ${this.age}, 
+                    Course: ${this.course}`
+            );
+            }
+        }
+
+        let student1 = new Student("Sarath", 20, "B.E CSE");
+        student1.display();
+
+        //Task 2:
+        console.log("--- Employee details :");
+
+        class Employee {
+            constructor(id,name,salary){
+                this.id=id;
+                this.name=name;
+                this.salary=salary;
+            }
+
+            display(){
+                console.log(`
+                    ID:${this.id},
+                    Name:${this.name},
+                    Salary:${this.salary}`
+            );
+            }
+        }
+        let employee1 = new Employee(5,"Peter parker",150000);
+        employee1.display(); 
+        
+        //Task 3:
+        console.log("--- Area of the rectangle :");
+
+        class Rectangle{
+            constructor(length,width){
+                this.length=length;
+                this.width=width;
+            }
+
+            display(){
+                console.log("Length :",rect.length);
+                console.log("Width :",rect.width);
+                console.log("Area :",this.length*this.width);
+            }
+        }
+
+        let rect=new Rectangle(10,5);
+        rect.display();
+
+        //Task 4:
+        console.log("--- Circumference of the circle :");
+
+        class Circle{
+            constructor(radius){
+                this.radius=radius;
+            }
+
+            cirumference(){
+                return 2 * 3.14 * this.radius;
+            }
+        }
+
+        let circum = new Circle(2);
+
+        console.log("Radius :",circum.radius);
+        console.log("Circumference :",circum.cirumference()); 
+
+        //Task 5:
+        console.log("--- Bank Account :")
+
+        class Bank{
+            constructor(accnumber,balance){
+                this.accnumber=accnumber;
+                this.balance=balance;
+            }
+
+            deposit(amount){
+                this.balance += amount;
+                console.log("Deposited Amount :",amount);
+            }
+
+            withdrawal(amount){
+                if(amount <= this.balance){
+                    this.balance -= amount;
+                    console.log("Withdrawn Account :",amount);
+                }else{
+                    console.log("Insufficient Balance");
+                }
+            }
+
+            miniStatement(){
+                console.log(`
+                        Account Number :${this.accnumber},
+                        Current Balance :${this.balance}
+                    `);
+            }
+
+            getAccDetails(){
+                this.accnumber=prompt("Enter the Account Number");
+
+                let dep = Number(prompt("Enter Deposit Amount"));
+                this.deposit(dep);
+
+                let wit = Number(prompt("Enter Withdrawal Amount"));
+                this.withdrawal(wit);
+            }
+        }
+
+        let account = new Bank("",0);
+
+        account.getAccDetails();
+        account.miniStatement();
+
+        //Task 6:
+        console.log("--- Car Details :");
+
+        class Car{
+            constructor(brand,model,year){
+                this.brand=brand;
+                this.model=model;
+                this.year=year;
+            }
+
+            display(){
+                console.log(`
+                Brand :${this.brand},
+                Model :${this.model},
+                Year :${this.year}
+                `);
+            }
+
+            getCarDetails(){
+                this.brand=prompt("Enter Car brand");
+                this.model=prompt("Enter Car model");
+                this.year=prompt("Enter Manufactured year");
+            }      
+        }
+        let car1 = new Car();
+        car1.getCarDetails();
+        car1.display();
+        
+        //Task 7:
+        console.log("--- Person details (Inheritance):")
+
+        class Person{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+            display(){
+                console.log(`Name :${this.name}`);
+                console.log(`Age :${this.age}`);
+            }
+        }
+
+        class Employee extends Person{
+            constructor(name,age,department){
+                super(name,age);
+                this.department=department;
+            }
+            dis(){
+                super.display();
+                console.log(`Department :${this.department}`);
+            }
+        }
+
+        let per = new Employee("Sam",15,"CSE");
+        per.dis(); 
+
+        //Task 8:
+        console.log("--- Animal (Override):");
+
+        class Animal{
+            sound(){
+                console.log("Sounds of dogs and cats");
+            }
+        }
+
+        class Dog extends Animal{
+            sound(){
+                super.sound();
+                console.log("Dogs: bark");
+            }
+        }
+
+        class Cat extends Animal{
+            sound(){
+                console.log("Cats: Meow");
+            }
+        }
+
+        let dog1 = new Dog();
+        let cat1 = new Cat();
+        dog1.sound();
+        cat1.sound(); 
+
+        //Task 9:
+        console.log("--- Book Details");
+
+        class Book{
+            constructor(title,author,price){
+                this.title=title;
+                this.author=author;
+                this.price=price;
+            }
+
+            display(){
+                console.log(`Title : ${this.title}`);
+                console.log(`Author : ${this.author}`);
+                console.log(`Price : ${this.price}`);
+            }
+
+            getBookDetails(){
+                this.title=prompt("Enter Title");
+                this.author=prompt("Enter Author ");
+                this.price=prompt("Enter price");
+            }
+        }
+
+        let book1 = new Book();
+        book1.getBookDetails();
+        book1.display();
+
+        //Task 10:
+        console.log("--- Calculator:")
+
+        class Calc{
+
+            addition(a,b){
+                console.log("Addition :",a+b);
+            }
+
+            subtraction(a,b){
+                console.log("Subtraction :",a-b);
+            }
+
+            multiplication(a,b){
+                console.log("Multiplication :",a*b);
+            }
+
+            division(a,b){
+                if(b!=0){
+                    console.log("Division :",a/b);
+                }else{
+                    console.log("Cannot divide by zero");
+                }
+            }
+        }
+
+        let num1 = Number(prompt("Enter Value 1"));
+        let num2 = Number(prompt("Enter value 2"));
+        let calc1 = new Calc();
+
+        calc1.addition(num1,num2);
+        calc1.subtraction(num1,num2);
+        calc1.multiplication(num1,num2);
+        calc1.division(num1,num2);
+        
+
+
+        
+
+
+
+    </script>
+
+
+
+
+</body>
+</html>
