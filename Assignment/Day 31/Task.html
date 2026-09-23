@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JavaScript Async Await Assignment</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Async/Await Assignment</h1>
+
+    <script>
+
+
+        // TASK 1: Wait for 2 Seconds
+
+        function waitTwoSeconds() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve("Task completed");
+                }, 2000);
+            });
+
+        }
+
+        async function taskOne() {
+            let result = await waitTwoSeconds();
+            console.log("Task 1 Result:", result);
+
+        }
+        taskOne();
+
+
+        // TASK 2: Fetch User Data
+
+        function getUserData() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve("Sarath");
+                }, 3000);
+            });
+        }
+
+        async function taskTwo() {
+            let name = await getUserData();
+            console.log("Task 2 Result: User name is", name);
+        }
+
+        taskTwo();
+
+
+        // TASK 3: Addition with Delay
+
+        function addNumbers(a, b) {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve(a + b);
+                }, 1000);
+            });
+        }
+
+        async function taskThree() {
+            let result = await addNumbers(10, 20);
+            console.log("Task 3 Result: Sum =", result);
+        }
+        taskThree();
+
+
+        // TASK 4: Sequential Execution
+
+        function delayTask(message, time) {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    console.log(message);
+                    resolve();
+
+                }, time);
+            });
+        }
+
+        async function task1() {
+            await delayTask("Task 1 completed", 1000);
+        }
+
+        async function task2() {
+            await delayTask("Task 2 completed", 1000);
+        }
+
+        async function task3() {
+            await delayTask("Task 3 completed", 1000);
+        }
+
+        async function sequentialExecution() {
+            console.log("Task 4 Started");
+            await task1();
+            await task2();
+            await task3();
+            console.log("Task 4: All tasks completed");
+        }
+        sequentialExecution();
+
+
+        // TASK 5: Order Food
+
+        function placeOrder() {
+            return new Promise(function(resolve) {
+                console.log("Order placed");
+                setTimeout(function() {
+                    resolve("Food is ready");
+                }, 3000);
+            });
+        }
+
+        async function orderFood() {
+            let result = await placeOrder();
+            console.log(result);
+            console.log("Enjoy your meal");
+        }
+        orderFood();
+
+        // TASK 6: Download a File
+
+        function downloadFile() {
+            return new Promise(function(resolve) {
+                console.log("Download started...");
+                setTimeout(function() {
+                    resolve("Download completed");
+                }, 3000);
+            });
+        }
+
+        async function download() {
+            console.log("Task 6:");
+            let result = await downloadFile();
+            console.log(result);
+        }
+        download();
+
+        // TASK 7: Check Even or Odd
+
+        function checkEvenOdd(number) {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    if (number % 2 === 0) {
+                        resolve("The number is Even");
+                    } else {
+                        resolve("The number is Odd");
+                    }
+                }, 2000);
+            });
+        }
+
+        async function taskSeven() {
+            let result = await checkEvenOdd(15);
+            console.log("Task 7 Result:", result);
+        }
+        taskSeven();
+
+        // TASK 8: Handle Errors Using try...catch
+
+        async function taskEight() {
+            try {
+                throw new Error("Something went wrong!");
+            } catch (error) {
+                console.log("Task 8 Error:", error.message);
+            }
+        }
+        taskEight();
+
+        // TASK 9: Multiple Promises Using await
+
+        function promiseOne() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve("Promise 1 completed");
+                }, 1000);
+            });
+        }
+
+        function promiseTwo() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve("Promise 2 completed");
+                }, 2000);
+            });
+        }
+
+        function promiseThree() {
+            return new Promise(function(resolve) {
+                setTimeout(function() {
+                    resolve("Promise 3 completed");
+                }, 3000);
+            });
+        }
+
+        async function taskNine() {
+            console.log("Task 9 Started");
+            let result1 = await promiseOne();
+            console.log(result1);
+            let result2 = await promiseTwo();
+            console.log(result2);
+            let result3 = await promiseThree();
+            console.log(result3);
+            console.log("Task 9 Completed");
+        }
+        taskNine();
+
+
+        // TASK 10: Student Result
+
+        async function studentResult(mark) {
+            if (mark > 35) {
+                return "Pass";
+            } else {
+                return "Fail";
+            }
+        }
+
+        async function taskTen() {
+            let result = await studentResult(75);
+            console.log("Task 10 Result:", result);
+        }
+        taskTen();
+
+
+    </script>
+
+</body>
+
+</html>

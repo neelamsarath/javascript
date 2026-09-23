@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Promise Assignment</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Promise Assignment</h1>
+
+    <script>
+
+        // TASK 1: Promise Resolves After 2 Seconds
+
+        let promise1 = new Promise(function(resolve, reject) {
+
+            setTimeout(function() {
+                resolve("Welcome to Js Promise");
+            }, 2000);
+
+        });
+
+        promise1.then(function(result) {
+            console.log("Task 1 Result:", result);
+        });
+
+
+        // TASK 2: Promise Rejects After 3 Seconds
+
+        let promise2 = new Promise(function(resolve, reject) {
+
+            setTimeout(function() {
+                reject("Invalid Data");
+            }, 3000);
+
+        });
+
+        promise2
+            .then(function(result) {
+                console.log("Task 2 Result:", result);
+            })
+            .catch(function(error) {
+                console.log("Task 2 Error:", error);
+            });
+
+
+        // TASK 3: Check Number - Odd or Even
+
+        function checkNumber(num) {
+
+            return new Promise(function(resolve, reject) {
+
+                if (num % 2 !== 0) {
+                    resolve("The number is Odd");
+                } else {
+                    reject("The number is Even");
+                }
+
+            });
+
+        }
+
+        checkNumber(7)
+            .then(function(result) {
+                console.log("Task 3 Result:", result);
+            })
+            .catch(function(error) {
+                console.log("Task 3 Error:", error);
+            });
+
+
+        // TASK 4: Check Employment Eligibility
+
+        function checkAge(age) {
+
+            return new Promise(function(resolve, reject) {
+
+                if (age >= 18) {
+                    resolve("Eligible for Employement");
+                } else {
+                    reject("Not eligible for Employement");
+                }
+
+            });
+
+        }
+
+        checkAge(25)
+            .then(function(result) {
+                console.log("Task 4 Result:", result);
+            })
+            .catch(function(error) {
+                console.log("Task 4 Error:", error);
+            });
+
+
+        // TASK 5: Sum Using Promise
+
+        function Sum(a, b) {
+
+            return new Promise(function(resolve, reject) {
+
+                if (b < 0) {
+                    reject("b cannot be a negative value");
+                } else {
+                    resolve(a + b);
+                }
+
+            });
+
+        }
+
+        Sum(10, 20)
+            .then(function(result) {
+                console.log("Task 5 Result: Sum =", result);
+            })
+            .catch(function(error) {
+                console.log("Task 5 Error:", error);
+            });
+
+
+        // TASK 6: Order Food Using Promise
+
+        function orderFood() {
+
+            return new Promise(function(resolve, reject) {
+
+                console.log("Task 6: Order placed");
+
+                setTimeout(function() {
+                    resolve("Food is ready");
+                }, 5000);
+
+            });
+
+        }
+
+        orderFood()
+            .then(function(result) {
+                console.log("Task 6 Result:", result);
+            });
+
+
+        // TASK 7: Check Whether String Is Empty
+
+        function checkString(str) {
+
+            return new Promise(function(resolve, reject) {
+
+                if (str.length > 0) {
+                    resolve("String contains characters");
+                } else {
+                    reject("String is empty");
+                }
+
+            });
+
+        }
+
+        checkString("Hello")
+            .then(function(result) {
+                console.log("Task 7 Result:", result);
+            })
+            .catch(function(error) {
+                console.log("Task 7 Error:", error);
+            });
+
+
+        // TASK 8: Find Even Number
+
+        function findEven(num) {
+
+            return new Promise(function(resolve, reject) {
+
+                if (num % 2 === 0) {
+                    resolve("The number is Even");
+                } else {
+                    reject("The number is Odd");
+                }
+
+            });
+
+        }
+
+        findEven(12)
+            .then(function(result) {
+                console.log("Task 8 Result:", result);
+            })
+            .catch(function(error) {
+                console.log("Task 8 Error:", error);
+            });
+
+
+        // TASK 9: Promise.all()
+
+        let promiseA = new Promise(function(resolve) {
+
+            setTimeout(function() {
+                resolve("Promise A completed after 1 second");
+            }, 1000);
+
+        });
+
+
+        let promiseB = new Promise(function(resolve) {
+
+            setTimeout(function() {
+                resolve("Promise B completed after 2 seconds");
+            }, 2000);
+
+        });
+
+
+        let promiseC = new Promise(function(resolve) {
+
+            setTimeout(function() {
+                resolve("Promise C completed after 3 seconds");
+            }, 3000);
+
+        });
+
+
+        Promise.all([promiseA, promiseB, promiseC])
+            .then(function(results) {
+
+                console.log("Task 9 Result:");
+
+                console.log(results);
+
+            })
+            .catch(function(error) {
+
+                console.log("Task 9 Error:", error);
+
+            });
+
+
+        // TASK 10: Promise.race()
+
+        let racePromise1 = new Promise(function(resolve) {
+
+            setTimeout(function() {
+                resolve("Promise 1 completed first");
+            }, 3000);
+
+        });
+
+
+        let racePromise2 = new Promise(function(resolve) {
+
+            setTimeout(function() {
+                resolve("Promise 2 completed first");
+            }, 1000);
+
+        });
+
+
+        let racePromise3 = new Promise(function(resolve, reject) {
+
+            setTimeout(function() {
+                reject("Promise 3 rejected");
+            }, 2000);
+
+        });
+
+
+        Promise.race([racePromise1, racePromise2, racePromise3])
+            .then(function(result) {
+
+                console.log("Task 10 Result:", result);
+
+            })
+            .catch(function(error) {
+
+                console.log("Task 10 Error:", error);
+
+            });
+
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Callback Function Assignment</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Callback Function Assignment</h1>
+
+    <script>
+
+        // TASK 1: Calculate Addition Using Callback
+
+        function calculate(a, b, callback) {
+            return callback(a, b);
+        }
+
+        function addition(a, b) {
+            return a + b;
+        }
+
+        let result1 = calculate(10, 20, addition);
+
+        console.log("Task 1 Result:", result1);
+
+
+        // TASK 2: Greet User Using Callback
+
+        function greetUser(name, callback) {
+            callback(name);
+        }
+
+        function welcomeMessage(name) {
+            console.log("Task 2 Result: Welcome, " + name + "!");
+        }
+
+        greetUser("Sarath", welcomeMessage);
+
+
+        // TASK 3: Double Each Element in an Array
+
+        function processArray(array, callback) {
+
+            let result = [];
+
+            for (let i = 0; i < array.length; i++) {
+                result.push(callback(array[i]));
+            }
+
+            return result;
+        }
+
+        function doubleNumber(number) {
+            return number * 2;
+        }
+
+        let numbers3 = [1, 2, 3, 4, 5];
+
+        let result3 = processArray(numbers3, doubleNumber);
+
+        console.log("Task 3 Result:", result3);
+
+
+        // TASK 4: Filter Positive Numbers
+
+        function filterNumbers(array, callback) {
+
+            let result = [];
+
+            for (let i = 0; i < array.length; i++) {
+
+                if (callback(array[i])) {
+                    result.push(array[i]);
+                }
+
+            }
+
+            return result;
+        }
+
+        function isPositive(number) {
+            return number > 0;
+        }
+
+        let numbers4 = [-5, 10, -2, 8, 0, 15];
+
+        let result4 = filterNumbers(numbers4, isPositive);
+
+        console.log("Task 4 Result:", result4);
+
+
+        // TASK 5: Find First Even Number
+
+        function findNumber(array, callback) {
+
+            for (let i = 0; i < array.length; i++) {
+
+                if (callback(array[i])) {
+                    return array[i];
+                }
+
+            }
+
+            return "No even number found";
+        }
+
+        function isEven(number) {
+            return number % 2 === 0;
+        }
+
+        let numbers5 = [3, 7, 9, 12, 16, 20];
+
+        let result5 = findNumber(numbers5, isEven);
+
+        console.log("Task 5 Result:", result5);
+
+
+        // TASK 6: Remove Negative Values
+
+        function removeNegative(array, callback) {
+
+            let result = [];
+
+            for (let i = 0; i < array.length; i++) {
+
+                if (callback(array[i])) {
+                    result.push(array[i]);
+                }
+
+            }
+
+            return result;
+        }
+
+        function isNotNegative(number) {
+            return number >= 0;
+        }
+
+        let numbers6 = [-10, 20, -5, 30, 40, -2];
+
+        let result6 = removeNegative(numbers6, isNotNegative);
+
+        console.log("Task 6 Result:", result6);
+
+
+        // TASK 7: Check Voting Eligibility
+
+        function checkEligibility(age, callback) {
+            callback(age);
+        }
+
+        function checkAge(age) {
+
+            if (age >= 18) {
+                console.log("Task 7 Result: Eligible to vote");
+            } else {
+                console.log("Task 7 Result: Not eligible to vote");
+            }
+
+        }
+
+        checkEligibility(20, checkAge);
+
+
+        // TASK 8: Order Food Using setTimeout()
+
+        function orderFood(callback) {
+
+            console.log("Task 8: Ordering food...");
+
+            setTimeout(function() {
+                callback();
+            }, 3000);
+
+        }
+
+        function foodReady() {
+            console.log("Task 8 Result: Food is ready");
+        }
+
+        orderFood(foodReady);
+
+
+        // TASK 9: Calculate Sum of Array
+     
+
+        function sumArray(array, callback) {
+
+            let sum = 0;
+
+            for (let i = 0; i < array.length; i++) {
+                sum = callback(sum, array[i]);
+            }
+
+            return sum;
+        }
+
+        function addNumbers(total, number) {
+            return total + number;
+        }
+
+        let numbers9 = [10, 20, 30, 40];
+
+        let result9 = sumArray(numbers9, addNumbers);
+
+        console.log("Task 9 Result:", result9);
+
+        
+        // TASK 10: Sort Array in Ascending Order
+        
+
+        function sortArray(array, callback) {
+            return array.sort(callback);
+        }
+
+        function ascending(a, b) {
+            return a - b;
+        }
+
+        let numbers10 = [50, 10, 40, 20, 30];
+
+        let result10 = sortArray(numbers10, ascending);
+
+        console.log("Task 10 Result:", result10);
+
+    </script>
+
+</body>
+</html>
