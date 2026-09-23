@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Class</title>
+</head>
+<body>
+
+<h1>Task 1:</h2>
+    <h2>Student Details</h2>
+    <p id="result"></p>
+
+<h1>Task 2:</h2>
+    <h2>Employee Details</h2>
+    <p id="result"></p> 
+
+<h1>Task 3:</h2>
+    <h2>Rectangle Area</h2>
+    <p id="result"></p>
+
+<h1>Task 4:</h2>
+    <h2>Circle Circumference</h2>
+    <p id="result"></p>
+
+<h1>Task 5:</h2>
+    <h2>Bank Account</h2>
+    <p id="result"></p>
+
+
+<script>
+    //Task 1:
+    class Student {
+        constructor(name, age, course) {
+            this.name = name;
+            this.age = age;
+            this.course = course;
+        }
+    }
+
+    let student1 = new Student("Sarath", 22, "Computer Science");
+
+    document.getElementById("result").innerHTML =
+        "Name: " + student1.name + "<br>" +
+        "Age: " + student1.age + "<br>" +
+        "Course: " + student1.course; 
+
+    //Task 2:
+
+    class Employee {
+        constructor(id, name, salary) {
+            this.id = id;
+            this.name = name;
+            this.salary = salary;
+        }
+
+        displayDetails() {
+            return "ID: " + this.id + "<br>" +
+                   "Name: " + this.name + "<br>" +
+                   "Salary: ₹" + this.salary;
+        }
+    }
+
+    let employee1 = new Employee(101, "Arun", 35000);
+
+    document.getElementById("result").innerHTML =
+        employee1.displayDetails(); 
+
+    //Task 3:
+
+     class Rectangle {
+        constructor(length, width) {
+            this.length = length;
+            this.width = width;
+        }
+
+        calculateArea() {
+            return this.length * this.width;
+        }
+    }
+
+    let rectangle1 = new Rectangle(10, 5);
+
+    document.getElementById("result").innerHTML =
+        "Length: " + rectangle1.length + "<br>" +
+        "Width: " + rectangle1.width + "<br>" +
+        "Area: " + rectangle1.calculateArea();
+
+     //Task 4:
+
+     class Circle {
+        constructor(radius) {
+            this.radius = radius;
+        }
+
+        calculateCircumference() {
+            return 2 * Math.PI * this.radius;
+        }
+    }
+
+    let circle1 = new Circle(7);
+
+    document.getElementById("result").innerHTML =
+        "Radius: " + circle1.radius + "<br>" +
+        "Circumference: " + circle1.calculateCircumference().toFixed(2);*/
+
+    //Task 5:
+
+     class BankAccount {
+        constructor(accountNumber, balance) {
+            this.accountNumber = accountNumber;
+            this.balance = balance;
+        }
+
+        deposit(amount) {
+            this.balance += amount;
+        }
+
+        withdrawal(amount) {
+            if (amount <= this.balance) {
+                this.balance -= amount;
+            } else {
+                alert("Insufficient balance!");
+            }
+        }
+
+        displayBalance() {
+            return "Account Number: " + this.accountNumber + "<br>" +
+                   "Balance: ₹" + this.balance;
+        }
+    }
+
+    let account1 = new BankAccount("ACC101", 10000);
+
+    account1.deposit(5000);
+    account1.withdrawal(2000);
+
+    document.getElementById("result").innerHTML =
+        account1.displayBalance(); 
+</script>
+
+</body>
+</html>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Click</title>
+</head>
+<body>
+
+<h3>Task 1:</h3>
+    <button id="btn">Click Me</button>
+    <p id="message"></p>
+
+<h3>Task 2:</h3>
+    <p id="para">This is my paragraph.</p>
+    <button id="colorBtn">Change Color</button>
+
+<h3>Task 3:</h3>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button id="showBtn">Show</button>
+    <p id="result"></p>
+
+<h3>Task 4:</h3>
+    <button id="countBtn">Click Me</button>
+    <p>Clicked: <span id="count">0</span> times</p>
+
+<h3>Task 5:</h3>
+    <div id="box">Move Mouse Here</div>
+    <style>
+            #box {
+                width: 200px;
+                height: 100px;
+                background-color: lightgray;
+                text-align: center;
+                padding-top: 50px;
+            }
+        </style>
+
+<h3>Task 6:</h3>
+    <button id="doubleBtn">Double Click Me</button>
+
+<h3>Task 7:</h3>
+    <input type="text" id="keyboardInput" placeholder="Press any key">
+    <p id="keyResult"></p>
+
+
+<h3>Task 8:</h3>
+    <p id="text">This paragraph can be hidden and shown.</p>
+    <button id="toggleBtn">Hide</button>
+
+<h3>Task 9:</h3>
+    <img id="myImage"
+        src="download.jpg"
+        width="200">
+
+    <br><br>
+    <button id="imageBtn">Change Image</button>
+
+<h3>Task 10:</h3>
+    <input type="text" id="myInput" placeholder="Click here">
+
+
+<script>
+
+    //Task 1:
+    let button = document.getElementById("btn");
+    let message = document.getElementById("message");
+
+    button.addEventListener("click", function() {
+        message.innerText = "Hello, World!";
+    });
+
+    //Task2:
+        let paragraph = document.getElementById("para");
+    let button1 = document.getElementById("colorBtn");
+
+    button1.addEventListener("click", function() {
+        paragraph.style.color = "blue";
+    });
+
+    //Task 3
+    let input = document.getElementById("nameInput");
+    let button2 = document.getElementById("showBtn");
+    let result = document.getElementById("result");
+
+    button2.addEventListener("click", function() {
+        result.innerText = input.value;
+    });
+
+    //Task 4:
+    let button3 = document.getElementById("countBtn");
+    let countText = document.getElementById("count");
+
+    let count = 0;
+
+    button3.addEventListener("click", function() {
+        count++;
+        countText.innerText = count;
+    });
+
+    //Task 5:
+    let box = document.getElementById("box");
+
+    box.addEventListener("mouseover", function() {
+        box.style.backgroundColor = "orange";
+    });
+
+    //Task 6:
+    let button4 = document.getElementById("doubleBtn");
+
+    button4.addEventListener("dblclick", function() {
+        alert("Button was double-clicked!");
+    });
+
+    //Task 7:
+    let input1 = document.getElementById("keyboardInput");
+    let result1 = document.getElementById("keyResult");
+
+    input1.addEventListener("keydown", function(event) {
+        result1.innerText = "You pressed: " + event.key;
+    });
+
+    //Task 8:
+    let paragraph1 = document.getElementById("text");
+    let button5 = document.getElementById("toggleBtn");
+
+    button5.addEventListener("click", function() {
+
+        if (paragraph1.style.display === "none") {
+            paragraph1.style.display = "block";
+            button5.innerText = "Hide";
+        } 
+        else {
+            paragraph1.style.display = "none";
+            button5.innerText = "Show";
+        }
+
+    });
+
+    //Task 9:
+    let image = document.getElementById("myImage");
+    let button6 = document.getElementById("imageBtn");
+
+    button6.addEventListener("click", function() {
+        image.src = "download.jpg";
+    });
+
+
+    //Task 10:
+    let input2 = document.getElementById("myInput");
+
+    input2.addEventListener("focus", function() {
+        input2.style.border = "2px solid blue";
+    });
+
+    input2.addEventListener("blur", function() {
+        input2.style.border = "1px solid black";
+    });
+</script>
+
+
+
+
+
+
+</body>
+</html>
